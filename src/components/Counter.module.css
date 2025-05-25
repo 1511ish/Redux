@@ -1,6 +1,6 @@
 .counter{
     width: 30%;
-    margin: auto;
+    margin: 10px auto;
     padding: 10px;
     text-align: center;
     background-color: #fff;
@@ -21,4 +21,9 @@
 
 .counter button{
     margin: 0.5rem;
+    padding: 5px 10px;
+    border: none;
+    background-color: rgb(74, 20, 173);
+    color: #fff;
+    border-radius: 8px;
 }

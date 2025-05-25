@@ -1,0 +1,24 @@
+.navbar {
+    background-color: rgb(58, 25, 136);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 100px;
+    color: #FFF;
+}
+
+.navbar ul {
+    display: flex;
+    margin-bottom: 0;
+}
+
+.navbar ul li {
+    list-style: none;
+    padding: 10px 20px;
+}
+
+.navbar ul li button {
+    background-color: yellow;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+}

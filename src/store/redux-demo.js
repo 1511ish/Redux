@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
 const counterReducer = (state = { counter: 0 }, action) => {
     switch (action.type) {
@@ -7,11 +7,27 @@ const counterReducer = (state = { counter: 0 }, action) => {
         case 'decrement':
             return { counter: state.counter - 1 };
         default:
-            return state; 
+            return state;
     }
 };
 
-const store = createStore(counterReducer);
+const authReducer = (state = { isAuthenticated: false }, action) => {
+    switch (action.type) {
+        case 'login':
+            return { isAuthenticated: true };
+        case 'logout':
+            return { isAuthenticated: false };
+        default:
+            return state;
+    }
+};
+
+const rootReducer = combineReducers({
+    counter: counterReducer,
+    auth: authReducer
+});
+
+const store = createStore(rootReducer);
 
 const counterSubscriber = () => {
     const latestState = store.getState();
@@ -21,3 +37,4 @@ const counterSubscriber = () => {
 store.subscribe(counterSubscriber);
 
 export default store;
+
